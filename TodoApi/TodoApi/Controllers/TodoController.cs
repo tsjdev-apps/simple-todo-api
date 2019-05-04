@@ -1,10 +1,6 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using TodoApi.Models;
 
 namespace TodoApi.Controllers
 {
@@ -12,5 +8,6 @@ namespace TodoApi.Controllers
     [ApiController]
     public class TodoController : ControllerBase
     {
+        private static List<TodoItem> _todoItems = new List<TodoItem>();
     }
 }
