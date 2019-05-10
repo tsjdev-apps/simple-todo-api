@@ -12,12 +12,24 @@ namespace TodoApi.Controllers
     {
         private static List<TodoItem> _todoItems = new List<TodoItem>();
 
-        [HttpGet]
+        /// <summary>
+        /// Gets a list of all todo items.
+        /// </summary>
+        /// <returns>list of all todo items</returns>
+        [ProducesResponseType(200)]  
+        [HttpGet]       
         public IActionResult Get()
         {
             return Ok(_todoItems);
         }
 
+        /// <summary>
+        /// Gets a todo item by its id.
+        /// </summary>
+        /// <param name="id">id of the todo item</param>
+        /// <returns>todo item with corresponding id</returns>
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
         [HttpGet("{id}")]
         public IActionResult GetById(string id)
         {
